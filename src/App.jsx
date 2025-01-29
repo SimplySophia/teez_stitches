@@ -1,16 +1,17 @@
-import React from 'react'
+
 
 import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-      <div className='flex text-blue-300 justify-center items-center'>
-        start
+      <div>
+        <Navbar />
       </div>
     </>
   )
 }
 
-export default App
+export default App;
