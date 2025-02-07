@@ -1,7 +1,10 @@
 
 
 import './App.css'
-import Navbar from './components/Navbar'
+import Category from './components/Category/Category';
+import Hero from './components/Hero/Hero';
+import Navbar from './components/Navbar/Navbar';
+
 
 function App() {
 
@@ -9,6 +12,8 @@ function App() {
     <>
       <div>
         <Navbar />
+        <Hero />
+        <Category />
       </div>
     </>
   )

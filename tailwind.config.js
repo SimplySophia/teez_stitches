@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{js,jsx,ts,tsx}"],
-    darkMode: 'class', // ✅ Enables class-based dark mode
+    content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
       extend: {
         container: {
@@ -14,5 +13,7 @@ export default {
       },
     },
     plugins: [],
+    darkMode: 'class', // ✅ Enables class-based dark mode
+
   };
   

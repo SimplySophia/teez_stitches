@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from 'react-icons/fa6';
 import DarkMode from './DarkMode';
@@ -47,8 +47,8 @@ const DropdownLinks = [
 
 const Navbar = () => {
   return (
-<div className="bg-white dark:bg-gray-900 dark:text-white transition duration-300">
-<div className='py-4'>
+<div className="bg-white dark:bg-gray-100 dark:text-white transition-all duration-200 relative z-10">
+<div className=''>
             <div className='container flex justify-between items-center'>
                 <div className='flex items-center'>
                     <a href='#' className='text-[#bc6c25] font-semibold tracking-widest text-2xl uppercase sm:text-2xl '>Etailor</a>
@@ -58,8 +58,8 @@ const Navbar = () => {
                           MenuLinks.map((data, index) => (
                             <li key={index}>
                               <a href={data.link} 
-                              className='inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200'>
-                              {" "}
+                              className='flex justify-between items-center h-14 max-w-[1240px] mx-auto font-semibold text-gray-500 hover:text-black dark:hover:text-white md:text-lg lg:text-xl duration-200'
+                              >
                               {data.name}
                               </a>
                             </li>
@@ -77,15 +77,16 @@ const Navbar = () => {
                             </span>
                           </a>
                           <div className='absolute z-[9999] hidden group-hover:block w-[200px] 
-                            rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white'>
+                           rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white'>
+
                             <ul className='space-y-2'>
                               {
                                 DropdownLinks.map((data, index) => (
-                                  <li>
+                                  <li key={index}>
                                     <a 
-                                      className='text-gray-500 hover:text-black 
-                                      dark:hover:text-white duration-200'
-                                      href={data.link}
+                                      className='text-gray-500 dark:hover:text-white duration-200
+                                       inline-block w-full p-2 hover:bg-gray-400 rounded-md font-semibold'
+                                       href={data.link}
                                     >
                                       {data.name}
                                     </a>
@@ -110,7 +111,7 @@ const Navbar = () => {
                      <div className='w-4 h-4 bg-red-500 text-white rounded-full flex items-center justify-center absolute top-0 right-0 text-xs'>4</div>
                   </button>
                   <div>
-                    <DarkMode/>
+                    <DarkMode />
                   </div>
                 </div>
             </div>
