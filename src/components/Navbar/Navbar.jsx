@@ -51,7 +51,7 @@ const Navbar = () => {
 <div className=''>
             <div className='container flex justify-between items-center'>
                 <div className='flex items-center'>
-                    <a href='#' className='text-[#bc6c25] font-semibold tracking-widest text-2xl uppercase sm:text-2xl '>Etailor</a>
+                    <a href='#' className='text-[#bc6c25] font-semibold tracking-widest text-2xl uppercase sm:text-xl '>Etailor</a>
                     <div className='lg:block'>
                       <ul className='flex items-center gap-4'>
                         {
