@@ -18,28 +18,28 @@ const Product = () => {
             id: 1,
             img: Img1,
             title: "Suit",
-            price: "120",
+            price: "220",
             aosDelay: "0"
         },
         {
             id: 2,
             img: Img2,
             title: "Suit",
-            price: "120",
+            price: "180",
             aosDelay: "0"
         },
         {
             id: 3,
             img: Img3,
             title: "Suit",
-            price: "120",
+            price: "245",
             aosDelay: "0"
         },
         {
             id: 4,
             img: Img4,
             title: "Suit",
-            price: "120",
+            price: "225",
             aosDelay: "0"
         },
         {
@@ -53,7 +53,7 @@ const Product = () => {
             id: 6,
             img: Img6,
             title: "Suit",
-            price: "120",
+            price: "130",
             aosDelay: "0"
         },
         {
