@@ -2,6 +2,7 @@
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from 'react-icons/fa6';
 import DarkMode from './DarkMode';
+import { Link } from "react-router-dom";
 
 
 const MenuLinks = [
@@ -45,20 +46,20 @@ const DropdownLinks = [
   },
 ]
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   return (
-<div className="bg-white dark:bg-gray-100 dark:text-white transition-all duration-200 relative z-10">
-<div className=''>
-            <div className='container flex justify-between items-center'>
-                <div className='flex items-center'>
-                    <a href='#' className='text-[#bc6c25] font-semibold tracking-widest text-2xl uppercase sm:text-xl '>Etailor</a>
-                    <div className='lg:block'>
-                      <ul className='flex items-center gap-4'>
+<div className="bg-white dark:bg-gray-900 dark:text-white transition-all duration-200 relative z-10">
+<div className=' flex justify-center'>
+            <div className='container flex justify-between items-center mx-auto w-[1140px]'>
+                <div className='flex justify-center items-center'>
+                    <a href='#' className='text-[#bc6c25] font-semibold tracking-widest text-xl uppercase md:text-xl pl-2'>Etailor</a>
+                    <div className='hidden lg:flex flex-1 justify-center'>
+                      <ul className='flex justify-center items-center gap-6 ml-80'>
                         {
                           MenuLinks.map((data, index) => (
                             <li key={index}>
                               <a href={data.link} 
-                              className='flex justify-between items-center h-14 max-w-[1240px] mx-auto font-semibold text-gray-500 hover:text-black dark:hover:text-white md:text-lg lg:text-xl duration-200'
+                              className='flex justify-center items-center h-14 max-w-[800px] mx-auto font-semibold text-gray-500 hover:text-black dark:hover:text-white md:text-sm lg:text-lg duration-200'
                               >
                               {data.name}
                               </a>
@@ -77,7 +78,7 @@ const Navbar = () => {
                             </span>
                           </a>
                           <div className='absolute z-[9999] hidden group-hover:block w-[200px] 
-                           rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white'>
+                                rounded-md bg-white dark:bg-gray-800 shadow-md p-2 dark:text-white'>
 
                             <ul className='space-y-2'>
                               {
@@ -102,14 +103,18 @@ const Navbar = () => {
                 <div className='flex justify-between items-center gap-4'>
                   <div className='relative group hidden sm:block'>
                     <input type='text' placeholder='Search'
-                    className='search-bar' />
-                    <IoMdSearch className='text-xl text-gray-600 dark:text-gray-400 absolute top-2.5 -translate-y-0.5
-                    right-3 group-hover:text-[#bc6c25] duration-200'/>
+                    className='search-bar w-50px h-50px' />
+                    <IoMdSearch className='text-lg text-gray-600 dark:text-gray-400 absolute top-2.5 -translate-y-0.5
+                    right-4 group-hover:text-[#bc6c25] duration-200'/>
                   </div>
-                  <button className='relative p-3'>
-                     <FaCartShopping className='text-xl text-gray-600 dark:text-gray-400' />
-                     <div className='w-4 h-4 bg-red-500 text-white rounded-full flex items-center justify-center absolute top-0 right-0 text-xs'>4</div>
-                  </button>
+                  <Link to="/cart" className="relative">
+                  <FaCartShopping className='text-2xl text-gray-600 dark:text-gray-400' />
+                  {cartCount > 0 && (
+                      <span className='w-4 h-4 bg-red-500 text-white rounded-full flex items-center justify-center absolute -top-2 -right-2 text-xs'>
+                        {cartCount}
+                      </span>
+                    )}
+                  </Link>
                   <div>
                     <DarkMode />
                   </div>
