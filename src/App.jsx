@@ -52,7 +52,7 @@ function App() {
       <Navbar cartCount={cartItems.length}/>
       {view === 'home' && (
         <>
-          <Hero />
+          <Hero setView={setView}/>
           <Category />
           <Services />
           <Banner data={BannerData} />

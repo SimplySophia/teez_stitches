@@ -10,7 +10,7 @@ const HeroData = [
     { id: 3, img: Image3, subtitle: 'Modern Fit', title: 'Trending Styles' }
 ];
 
-const Hero = () => {
+const Hero = ({setView}) => {
     const settings = {
         dots: false,
         arrows: false,
@@ -44,9 +44,12 @@ const Hero = () => {
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
                                 <h1 className="text-2xl sm:text-4xl font-bold">{data.subtitle}</h1>
                                 <h2 className="text-3xl sm:text-6xl font-extrabold">{data.title}</h2>
-                                <button className="mt-6 bg-white text-black px-6 py-3 rounded-full text-lg">
+                                <button
+                                    className="mt-4 bg-[#bc6c25] text-white px-4 py-2 rounded-md"
+                                    onClick={() => setView('product')}
+                                >
                                     Shop Now
-                                </button>
+                                </button>                                
                             </div>
                         </div>
                     ))}
